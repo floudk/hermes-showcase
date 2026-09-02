@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 值得关注清单 · 2026-09-03</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d212b; --txt:#e8eaf0; --sub:#9aa3b2;
+    --accent:#58a6ff; --star:#f0b429; --border:#2a2f3a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;line-height:1.6;padding:24px 16px 60px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{margin-bottom:28px}
+  h1{font-size:1.5rem;margin-bottom:6px}
+  .meta{color:var(--sub);font-size:.85rem}
+  .meta b{color:var(--accent)}
+  input#filter{width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--txt);font-size:.95rem;margin:14px 0 8px;outline:none}
+  input#filter:focus{border-color:var(--accent)}
+  .hint{color:var(--sub);font-size:.78rem;margin-bottom:18px}
+  h2{font-size:1.05rem;margin:26px 0 12px;padding-left:10px;border-left:3px solid var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:10px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;transition:transform .12s,border-color .12s}
+  .card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  a.repo{color:var(--accent);font-weight:600;text-decoration:none;font-size:.98rem;word-break:break-all}
+  a.repo:hover{text-decoration:underline}
+  .badges{display:flex;gap:6px;flex-shrink:0}
+  .badge{font-size:.7rem;padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .star{background:rgba(240,180,41,.12);color:var(--star);border:1px solid rgba(240,180,41,.3)}
+  .lang{background:var(--card2);color:var(--sub);border:1px solid var(--border)}
+  .desc{color:var(--sub);font-size:.85rem}
+  .note{color:#c9d4e3;font-size:.83rem;background:var(--card2);border-left:2px solid var(--accent);padding:4px 10px;border-radius:0 6px 6px 0}
+  .count{color:var(--sub);font-size:.8rem}
+  footer{margin-top:36px;color:var(--sub);font-size:.75rem;border-top:1px solid var(--border);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>⭐ GitHub 值得关注清单</h1>
+    <div class="meta">数据抓取自 GitHub API · <b>2026-09-03</b> · 分类：Agent Skills / 量化入门 / 工程参考</div>
+    <input type="text" id="filter" placeholder="🔍 过滤：输入 repo 名、语言或关键词…（如 qlib / skill / rust）">
+    <div class="hint" id="hint"></div>
+  </header>
+
+  <section>
+    <h2>🤖 A. Agent Skills 生态</h2>
+    <div class="grid" data-cat="skills"></div>
+  </section>
+
+  <section>
+    <h2>📈 B. 量化入门学习线</h2>
+    <div class="grid" data-cat="learn"></div>
+  </section>
+
+  <section>
+    <h2>🏗️ C. 量化工程参考（架构向）</h2>
+    <div class="grid" data-cat="eng"></div>
+  </section>
+
+  <footer>
+    清单按 GitHub star 与用途筛选 · 星标数为抓取时点数值 · 为自用浏览页，可随时用同数据重新生成更新。
+  </footer>
+</div>
+
+<script>
+const DATA = {
+  skills: [
+    {r:"obra/superpowers",s:280770,l:"",d:"An agentic skills framework &amp; software development methodology that works.",n:"方法论天花板；Hermes 内置的部分 superpowers 技能即源自此"},
+    {r:"anthropics/skills",s:173214,l:"",d:"Public repository for Agent Skills — Anthropic 官方标准仓",n:"看它了解 Agent Skills 的官方规范与写法"},
+    {r:"mattpocock/skills",s:244951,l:"",d:"Skills for Real Engineers. Straight from my .agents directory.",n:"真实工程流实用技能集（TS/代码质量向），比花架子实"},
+    {r:"multica-ai/andrej-karpathy-skills",s:209604,l:"",d:"A single CLAUDE.md file to improve Claude Code behavior, from Karpathy's observations.",n:"Karpathy 视角的 agent 调教，思想密度高"},
+    {r:"farion1231/cc-switch",s:130724,l:"",d:"Desktop All-in-One assistant for Claude Code / Codex / OpenCode / OpenClaw / Grok Build",n:"一个面板切换多个 coding agent——你装了 codex+claude，正好用得上"},
+    {r:"Shubhamsaboo/awesome-llm-apps",s:135757,l:"",d:"100+ AI Agents, Agent Skills and RAG Apps — Free and Open Source",n:"找灵感/抄作业的合集索引"}
+  ],
+  learn: [
+    {r:"wilsonfreitas/awesome-quant",s:29378,l:"HTML",d:"A curated list of libraries &amp; resources for Quantitative Finance",n:"导航索引：所有量化库/书/资源的第一站"},
+    {r:"akfamily/akshare",s:22379,l:"Python",d:"AKShare — 优雅简单的金融数据接口库（面向人类）",n:"A股免费数据，入门第一站；数据通了才能动手"},
+    {r:"waditu/tushare",s:15381,l:"Python",d:"TuShare — 中国股票历史数据抓取工具（经典款）",n:"老牌 A股数据源，akshare 之外的备选"},
+    {r:"kernc/backtesting.py",s:8926,l:"Python",d:"Backtest trading strategies in Python — 轻量回测",n:"API 极简，适合第一个策略练手"},
+    {r:"pmorissette/bt",s:2972,l:"Python",d:"bt — flexible backtesting for Python",n:"组合/资产配置层回测，思路更贴近投资而非撮合"},
+    {r:"microsoft/qlib",s:48213,l:"Python",d:"Qlib — AI-oriented quant investment platform (数据→因子→模型→回测)",n:"AI 量化研究平台全家桶；架构参考价值极高"}
+  ],
+  eng: [
+    {r:"nautechsystems/nautilus_trader",s:28311,l:"Rust",d:"Production-grade Rust-native trading engine with deterministic event-driven architecture",n:"对标公司 C++ 事件驱动核心的现代开源实现，值得解剖"},
+    {r:"nkaz001/hftbacktest",s:4582,l:"Rust",d:"Free high frequency trading &amp; market making backtesting / trading bot",n:"HFT/做市回测 + orderbook 回放，撮合引擎思路参考"},
+    {r:"vnpy/vnpy",s:45067,l:"Python",d:"基于 Python 的开源量化交易平台开发框架",n:"中文量化第一生态；文档/社区对自学最友好"},
+    {r:"quantopian/zipline",s:20078,l:"Python",d:"Zipline — a Pythonic Algorithmic Trading Library",n:"经典研究型回测框架，事件驱动教科书"},
+    {r:"ricequant/rqalpha",s:6742,l:"Python",d:"Extendable, replaceable Python algorithmic backtest &amp; trading framework",n:"“可扩展/可替换”设计命题与你做的接入框架同构，代码量小好读"},
+    {r:"QuantConnect/Lean",s:21455,l:"C#",d:"Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",n:"多语言量化引擎，量级参考"}
+  ]
+};
+
+function fmt(s){return s>=1000?Math.round(s/1000)+"k":s}
+function render(cat){
+  const el=document.querySelector(`.grid[data-cat="${cat}"]`);
+  el.innerHTML = DATA[cat].map(i=>`
+    <div class="card" data-k="${(i.r+i.l+i.d).toLowerCase()}">
+      <div class="top">
+        <a class="repo" href="https://github.com/${i.r}" target="_blank" rel="noopener">${i.r}</a>
+        <div class="badges">
+          ${i.l?`<span class="badge lang">${i.l}</span>`:""}
+          <span class="badge star">★ ${fmt(i.s)}</span>
+        </div>
+      </div>
+      <div class="desc">${i.d}</div>
+      <div class="note">💡 ${i.n}</div>
+    </div>`).join("");
+}
+
+Object.keys(DATA).forEach(render);
+
+const inp=document.getElementById("filter");
+inp.addEventListener("input",()=>{
+  const q=inp.value.trim().toLowerCase();
+  let shown=0,total=0;
+  document.querySelectorAll(".card").forEach(c=>{
+    const ok=!q||c.dataset.k.includes(q);
+    c.style.display=ok?"":"none";
+    if(ok)shown++; total++;
+  });
+  document.getElementById("hint").textContent=q?`匹配 ${shown}/${total} 个`:"";
+});
+</script>
+</body>
+</html>
