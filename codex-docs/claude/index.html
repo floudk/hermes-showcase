@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 核心手册 · 镜像</title>
+<style>
+  :root{--bg:#0f1115;--card:#171a21;--card2:#1d212b;--txt:#e8eaf0;--sub:#9aa3b2;--accent:#d97757;--border:#2a2f3a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6;padding:24px 16px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:1.4rem;margin-bottom:6px}
+  .meta{color:var(--sub);font-size:.85rem;margin-bottom:16px}
+  .note{color:var(--sub);font-size:.8rem;background:var(--card);border:1px dashed var(--border);border-radius:8px;padding:8px 12px;margin-bottom:20px}
+  a.item{display:flex;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 16px;text-decoration:none;color:var(--txt);margin-bottom:8px;transition:border-color .12s}
+  a.item:hover{border-color:var(--accent)}
+  .t{font-weight:600;color:var(--accent)}
+  .sz{color:var(--sub);font-size:.72rem;white-space:nowrap;margin-left:12px;align-self:center}
+  footer{margin-top:26px;color:var(--sub);font-size:.75rem;border-top:1px solid var(--border);padding-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📗 Claude Code 核心手册（镜像）</h1>
+  <div class="meta">来源：code.claude.com/docs · 镜像时间 2026-09-08 · 每篇为原始 .md，可 curl 下载</div>
+  <div class="note">🤖 精选 14 篇核心文档，公司网络可直连访问。完整全量版见 <a href="../claude-full.md" style="color:var(--accent)">claude-full.md（8.7MB）</a>，全部页面索引见 <a href="../claude-index.md" style="color:var(--accent)">claude-index.md</a>。</div>
+  <div id="list"></div>
+  <footer>由 Hermes 生成 · GitHub Pages 镜像 · 仅供个人学习使用</footer>
+</div>
+<script>
+const pages = [
+  ["overview", "总览：Claude Code 是什么、核心能力"],
+  ["quickstart", "快速上手：5 分钟跑起来"],
+  ["setup", "安装与版本管理（系统要求、升级、卸载）"],
+  ["authentication", "登录与认证（个人/团队/企业）"],
+  ["cli-reference", "CLI 全量命令参考（flags 大全）"],
+  ["settings", "配置文件 settings.json 全解"],
+  ["memory", "记忆：CLAUDE.md 与 auto memory"],
+  ["skills", "Skills 技能系统（含自定义命令）"],
+  ["hooks", "Hooks 事件钩子自动化（含全部 8 类）"],
+  ["sub-agents", "自定义子代理 subagents"],
+  ["mcp", "MCP 服务器接入"],
+  ["plugins", "插件系统"],
+  ["prompt-caching", "Prompt 缓存机制（省钱关键）"],
+  ["best-practices", "最佳实践"]
+];
+document.getElementById("list").innerHTML = pages.map(([f,d])=>
+  `<a class="item" href="${f}.md"><div><div class="t">${f}.md</div><div>${d}</div></div></a>`
+).join("");
+</script>
+</body>
+</html>
