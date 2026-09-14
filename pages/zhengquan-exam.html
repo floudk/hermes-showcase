@@ -3,94 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>证券从业冲刺 · 9天计划</title>
+<title>证券从业 · 5天过线冲刺</title>
 <style>
   :root{--bg:#0f1115;--card:#171a21;--card2:#1d212b;--txt:#e8eaf0;--sub:#9aa3b2;--accent:#58a6ff;--ok:#3fb950;--warn:#f0b429;--border:#2a2f3a}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;padding:24px 16px 60px}
-  .wrap{max-width:860px;margin:0 auto}
+  .wrap{max-width:820px;margin:0 auto}
   h1{font-size:1.45rem;margin-bottom:8px}
   .meta{color:var(--sub);font-size:.85rem;margin-bottom:14px}
-  .countdown{background:linear-gradient(135deg,#1d2a3a,#171a21);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:18px}
+  .countdown{background:linear-gradient(135deg,#1d2a3a,#171a21);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px}
   .countdown b{color:var(--warn);font-size:1.3rem}
+  .strategy{background:rgba(88,166,255,.07);border:1px solid rgba(88,166,255,.25);border-radius:10px;padding:11px 15px;font-size:.88rem;margin-bottom:18px}
   h2{font-size:1.05rem;margin:24px 0 10px;padding-left:10px;border-left:3px solid var(--accent)}
-  .info{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:.88rem}
-  .info div{margin:3px 0}
   .day{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px;display:flex;gap:12px;align-items:flex-start}
   .day input{margin-top:5px;width:17px;height:17px;accent-color:var(--ok);flex-shrink:0;cursor:pointer}
   .day.done{opacity:.5}
   .day.done .t{text-decoration:line-through}
   .day .t{font-weight:600;margin-bottom:3px}
-  .day .d{color:var(--sub);font-size:.84rem}
-  .pill{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
-  .p-law{background:rgba(217,119,87,.15);color:#e8937a;border:1px solid rgba(217,119,87,.35)}
-  .p-base{background:rgba(88,166,255,.12);color:var(--accent);border:1px solid rgba(88,166,255,.3)}
-  .p-final{background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3)}
+  .day .d{color:var(--sub);font-size:.85rem}
   table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:6px}
   th,td{border:1px solid var(--border);padding:7px 10px;text-align:left}
   th{background:var(--card2);color:var(--sub);font-weight:600}
   .warnbox{background:rgba(240,180,41,.08);border:1px solid rgba(240,180,41,.3);border-radius:10px;padding:10px 14px;font-size:.83rem;color:#e8d08a;margin-top:10px}
+  .info{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:.87rem}
+  .info div{margin:3px 0}
   a{color:var(--accent)}
   footer{margin-top:30px;color:var(--sub);font-size:.75rem;border-top:1px solid var(--border);padding-top:12px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>📚 证券从业冲刺 · 9 天计划</h1>
-  <div class="meta">2026年9月统一测试 · 两科各 120 题 · 60 分合格 · 勾选进度自动保存在浏览器</div>
+  <h1>📚 证券从业 · 5 天过线冲刺</h1>
+  <div class="meta">9/14 - 9/18 冲刺 · 9/19（周六）考试 · 目标：60 分，及格万岁</div>
 
-  <div class="countdown">⏳ 距考试日（9/19 周六，以准考证为准）：<b><span id="days">-</span> 天</b></div>
+  <div class="countdown">⏳ 距考试：<b><span id="days">-</span> 天</b>（以准考证为准）</div>
 
-  <div class="info">
-    <div>📄 <b>准考证打印</b>：9月16日 15:00 起（<a href="https://ks.sac.net.cn/" target="_blank">证券业协会报名平台</a>）</div>
-    <div>📝 <b>科目</b>：《金融市场基础知识》+《证券市场基本法律法规》，60 分及格即可</div>
-    <div>🎯 <b>策略</b>：刷题为主、不啃教材；法规 60% 精力，基础 40%</div>
-  </div>
+  <div class="strategy">🎯 <b>过线策略（就三条）</b>：① 刷题就是全部，不啃教材 ② 法规时间占 6 成、基础 4 成 ③ 不追求高分——单选题稳、多选题只选最确定的、绝不空题</div>
 
-  <h2>🗓️ 每日任务（点击勾选，自动保存）</h2>
+  <h2>🗓️ 每天 1.5-2 小时（点击勾选，自动保存）</h2>
 
-  <div class="day"><input type="checkbox" data-k="d1"><div><div class="t">D1（9/10 今天）环境就绪<span class="pill p-final">启动</span></div><div class="d">手机装好题库 App（233网校 或 万题库），做一次"章节练习"摸底：法规第1章 + 基础第1章，看解析</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d2"><div><div class="t">D2（9/11）法规主线一<span class="pill p-law">法规</span></div><div class="d">证券市场基本法律法规：证券法核心条款（发行、交易、信息披露、禁止行为）+ 配套章节练习各 50 题</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d3"><div><div class="t">D3（9/12）法规主线二<span class="pill p-law">法规</span></div><div class="d">证券经营机构管理规范 + 证券公司业务规范（经纪/资管/自营/投行基础规则）+ 章节练习</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d4"><div><div class="t">D4（9/13）法规收尾 + 基础起步<span class="pill p-law">法规</span><span class="pill p-base">基础</span></div><div class="d">法规：违法违规行为与法律责任 + 投资者适当性管理；基础：金融市场体系 + 中国金融体系，各 50 题</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d5"><div><div class="t">D5（9/14）基础主线一<span class="pill p-base">基础</span></div><div class="d">证券市场主体（发行人/投资者/中介机构）+ 股票（发行、交易、估值基础）+ 债券基础，各 60 题</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d6"><div><div class="t">D6（9/15）基础主线二<span class="pill p-base">基础</span></div><div class="d">证券投资基金 + 金融衍生工具 + 金融风险管理（这三个模块你会很快——量化背景加分）</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d7"><div><div class="t">D7（9/16）第一套全真模拟<span class="pill p-final">模拟</span></div><div class="d">打印准考证（15:00 后）！然后每科各做 1 套真题/模拟（120题/90分钟），记录错题</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d8"><div><div class="t">D8（9/17）第二套模拟 + 错题归因<span class="pill p-final">模拟</span></div><div class="d">再各 1 套；把所有错题按"概念不清 / 数字记混 / 审题失误"分类，重点补前两类</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d9"><div><div class="t">D9（9/18）只做两件事<span class="pill p-final">冲刺</span></div><div class="d">① 错题重刷一遍 ② 背下面的"必背数字表"。晚上早睡，别刷夜</div></div></div>
-  <div class="day"><input type="checkbox" data-k="d10"><div><div class="t">考试日（9/19 周六）<span class="pill p-final">上岸</span></div><div class="d">带身份证+准考证；两科之间别对答案；单选难题标记后跳过，多选只选最确定的</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d1"><div><div class="t">9/14（今天）装好题库，开刷</div><div class="d">手机装「233网校」或「万题库」App → 直接做法规章节练习（证券法部分），错题看解析——解析就是教材</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d2"><div><div class="t">9/15 法规刷完（重点）</div><div class="d">证券经营机构管理规范 + 证券公司业务规范 + 违法违规行为与法律责任 + 投资者适当性。法规是背多分的科目，投入产出最高</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d3"><div><div class="t">9/16 打印准考证 + 基础前半</div><div class="d">15:00 后打印准考证（确认考试日期/场次！）→ 基础：金融市场体系、证券市场主体、股票。你是量化背景，基础这科会明显更快</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d4"><div><div class="t">9/17 基础刷完 + 法规错题</div><div class="d">基础：债券、基金、衍生品、风险管理 → 回刷一遍前三天的法规错题</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d5"><div><div class="t">9/18 最后一天：模拟 + 背表</div><div class="d">两科各做 1 套真题/模拟（120 题，卡 90 分钟）→ 只看错题 → 背下面的数字表 → 早睡，别刷夜</div></div></div>
+  <div class="day"><input type="checkbox" data-k="d6"><div><div class="t">9/19 考试日 🚀</div><div class="d">带身份证+准考证，提前 30 分钟到。两科之间别对答案。翻完一遍再回头琢磨不确定的题</div></div></div>
 
-  <h2>🔢 必背数字表（法规送分点）</h2>
+  <h2>🔢 必背数字表（法规最容易送的 5 分）</h2>
   <table>
     <tr><th>考点</th><th>记忆点</th></tr>
-    <tr><td>举牌线（权益变动披露）</td><td>持股达 <b>5%</b> 需报告并公告；此后每增减 <b>5%</b> 再披露</td></tr>
+    <tr><td>举牌线</td><td>持股达 <b>5%</b> 要报告公告；之后每增减 <b>5%</b> 再披露</td></tr>
     <tr><td>要约收购触发</td><td>持股达 <b>30%</b> 后继续增持，须向全体股东发要约</td></tr>
     <tr><td>要约收购期限</td><td>不少于 <b>30 日</b>、不超过 <b>60 日</b></td></tr>
-    <tr><td>年度报告 / 中期报告</td><td>年度报告 <b>4 个月</b>内、中期报告 <b>2 个月</b>内报送</td></tr>
-    <tr><td>投资者适当性</td><td>普通/专业投资者分类；创业板、科创板、北交所均有门槛（重点看"个人投资者门槛"）</td></tr>
+    <tr><td>年报 / 中报时限</td><td>年度报告 <b>4 个月</b>内、中期报告 <b>2 个月</b>内</td></tr>
+    <tr><td>适当性管理</td><td>普通/专业投资者分类 + 各板块个人投资者门槛（创业板/科创板/北交所重点看）</td></tr>
   </table>
-  <div class="warnbox">⚠️ 数字以最新教材/官方大纲为准（法规会修订），刷题遇到不同数字以题目解析和教材为准，别死记这张表。</div>
+  <div class="warnbox">⚠️ 法规会修订，数字以最新教材和题目解析为准；刷题时遇到不同数字，信题目解析。</div>
 
-  <h2>🔗 刷题资源</h2>
+  <h2>🔗 只用这两个就够</h2>
   <div class="info">
-    <div>• <a href="https://m.233.com/zq/tiku/" target="_blank">233网校网页题库</a>（章节练习免费，网页版比 App 更新可查）</div>
-    <div>• 万题库 App（章节智能练习免费）</div>
-    <div>• <a href="https://ks.sac.net.cn/" target="_blank">证券业协会报名平台</a>（准考证/成绩）</div>
+    <div>• <a href="https://m.233.com/zq/tiku/" target="_blank">233网校网页题库</a>（章节练习免费，网页版更新可查）</div>
+    <div>• <a href="https://ks.sac.net.cn/" target="_blank">证券业协会报名平台</a>（准考证 9/16 15:00 起 / 成绩查询）</div>
   </div>
 
-  <footer>进度数据仅存本地浏览器 · 由 Hermes 生成 · 考试信息以官方准考证为准</footer>
+  <footer>进度仅存本地浏览器 · 由 Hermes 生成 · 考试信息以官方准考证为准</footer>
 </div>
 <script>
 const target = new Date("2026-09-19T09:00:00+08:00");
-const now = new Date();
-const days = Math.max(0, Math.ceil((target - now) / 86400000));
-document.getElementById("days").textContent = days;
-
+document.getElementById("days").textContent = Math.max(0, Math.ceil((target - new Date())/86400000));
 document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
-  const k = "zq_exam_" + cb.dataset.k;
-  if(localStorage.getItem(k) === "1"){ cb.checked = true; cb.closest(".day").classList.add("done"); }
+  const k = "zq_exam5_" + cb.dataset.k;
+  if(localStorage.getItem(k)==="1"){ cb.checked=true; cb.closest(".day").classList.add("done"); }
   cb.addEventListener("change", ()=>{
-    localStorage.setItem(k, cb.checked ? "1" : "0");
+    localStorage.setItem(k, cb.checked?"1":"0");
     cb.closest(".day").classList.toggle("done", cb.checked);
   });
 });
