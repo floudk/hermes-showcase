@@ -7,6 +7,11 @@ on:
     # 00:17 UTC = 08:17 北京时间（避开整点，降低 GitHub 定时任务延迟概率）
     - cron: '17 0 * * *'
   workflow_dispatch:
+    inputs:
+      commit_status:
+        description: '同时提交 docs-status.json（模拟定时任务的保活提交）'
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -69,7 +74,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Keep scheduled workflow alive (status commit)
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' || inputs.commit_status == true
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
