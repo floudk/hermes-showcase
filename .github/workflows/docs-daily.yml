@@ -60,13 +60,13 @@ jobs:
           key: docs-cache-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist/site
 
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
 
       - name: Keep scheduled workflow alive (status commit)
         if: github.event_name == 'schedule'
