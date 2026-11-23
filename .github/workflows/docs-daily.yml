@@ -1,0 +1,84 @@
+name: Daily docs mirror
+
+# 每日抓取 Claude Code / Codex / DeepSeek Harness 官方文档，打包成 codex-docs.zip
+# 并用 GitHub Pages(Artifact) 部署到 https://floudk.github.io/hermes-showcase/
+on:
+  schedule:
+    # 00:17 UTC = 08:17 北京时间（避开整点，降低 GitHub 定时任务延迟概率）
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # 每日提交 docs-status.json，避免 60 天无活动导致定时任务被 GitHub 停用
+  pages: write
+  id-token: write
+
+concurrency:
+  group: docs-mirror
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore previous docs cache
+        uses: actions/cache/restore@v4
+        with:
+          path: build/cache
+          key: docs-cache-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            docs-cache-
+
+      - name: Build docs pack
+        run: python3 scripts/build_docs.py --repo . --out dist --cache build/cache
+
+      - name: Save docs cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: build/cache
+          key: docs-cache-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Keep scheduled workflow alive (status commit)
+        if: github.event_name == 'schedule'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp dist/docs-status.json docs-status.json
+          if git diff --quiet -- docs-status.json; then
+            echo 'status unchanged, nothing to commit'
+          else
+            git add docs-status.json
+            git commit -m "docs: daily mirror $(TZ=Asia/Shanghai date +%Y-%m-%d)"
+            git push
+          fi
