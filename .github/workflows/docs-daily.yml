@@ -34,7 +34,7 @@ jobs:
     timeout-minutes: 30
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy-retry.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -69,9 +69,21 @@ jobs:
         with:
           path: dist/site
 
+      - name: Wait for Pages artifact to register
+        # GitHub 偶尔会在 artifact 上传后几秒内查不到它，导致 deploy-pages 报 "Found 0 artifact(s)"
+        run: sleep 15
+
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Retry deploy to GitHub Pages
+        id: deploy-retry
+        if: steps.deploy.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 600000
 
       - name: Keep scheduled workflow alive (status commit)
         if: github.event_name == 'schedule' || inputs.commit_status == true
