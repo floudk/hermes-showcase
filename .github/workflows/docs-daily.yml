@@ -32,17 +32,17 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
       - name: Restore previous docs cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: build/cache
           key: docs-cache-${{ github.run_id }}-${{ github.run_attempt }}
@@ -54,19 +54,19 @@ jobs:
 
       - name: Save docs cache
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: build/cache
           key: docs-cache-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist/site
 
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Keep scheduled workflow alive (status commit)
         if: github.event_name == 'schedule'
@@ -75,10 +75,17 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           cp dist/docs-status.json docs-status.json
-          if git diff --quiet -- docs-status.json; then
+          git add docs-status.json
+          if git diff --cached --quiet -- docs-status.json; then
             echo 'status unchanged, nothing to commit'
-          else
-            git add docs-status.json
-            git commit -m "docs: daily mirror $(TZ=Asia/Shanghai date +%Y-%m-%d)"
-            git push
+            exit 0
           fi
+          git commit -m "docs: daily mirror $(TZ=Asia/Shanghai date +%Y-%m-%d)"
+          for attempt in 1 2 3; do
+            if git push; then
+              break
+            fi
+            echo "push attempt ${attempt} failed, rebasing ..."
+            git pull --rebase --autostash origin main
+            sleep $((attempt * 5))
+          done
