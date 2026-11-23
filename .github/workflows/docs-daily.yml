@@ -1,6 +1,6 @@
 name: Daily docs mirror
 
-# 每日抓取 Claude Code / Codex / DeepSeek Harness 官方文档，打包成 codex-docs.zip
+# 每日抓取 Claude Code / Codex / DeepSeek Harness 官方文档，打包成 dev-docs.zip
 # 并用 GitHub Pages(Artifact) 部署到 https://floudk.github.io/hermes-showcase/
 on:
   schedule:

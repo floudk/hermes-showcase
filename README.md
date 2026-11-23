@@ -4,12 +4,20 @@ Hermes 的展示页仓库，同时托管一个「每日自动更新」的开发�
 
 ## 每日文档包（自动更新）
 
-- **一键下载**：<https://floudk.github.io/hermes-showcase/codex-docs.zip>
-- **在线浏览**：<https://floudk.github.io/hermes-showcase/codex-docs/index.html>
+- **一键下载**：<https://floudk.github.io/hermes-showcase/dev-docs.zip>
+- **在线浏览**：<https://floudk.github.io/hermes-showcase/>
 - **构建状态**：<https://floudk.github.io/hermes-showcase/docs-status.json>
 - **运行记录**：<https://github.com/floudk/hermes-showcase/actions/workflows/docs-daily.yml>
 
-内容：
+zip 内只有 **3 个目录 + 一个简短 README**：
+
+```
+dev-docs.zip
+├── README.md   # 打包时间 + 来源映射（十几行）
+├── claude/     # Claude Code 全量文档
+├── codex/      # OpenAI Codex 全量文档
+└── dsh/        # DeepSeek Harness 官方 docs/ 全量镜像
+```
 
 | 目录 | 文档 | 官方来源 |
 | --- | --- | --- |
