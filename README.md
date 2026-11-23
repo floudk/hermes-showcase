@@ -1,11 +1,12 @@
 # hermes-showcase
 
-Hermes 的展示页仓库，同时托管一个「每日自动更新」的开发者文档离线包。
+每天自动抓取并打包 Claude Code / OpenAI Codex / DeepSeek Harness 官方文档，通过 GitHub Pages 提供一键下载。
+
+站点首页：<https://floudk.github.io/hermes-showcase/>（只有下载入口）
 
 ## 每日文档包（自动更新）
 
 - **一键下载**：<https://floudk.github.io/hermes-showcase/dev-docs.zip>
-- **在线浏览**：<https://floudk.github.io/hermes-showcase/>
 - **构建状态**：<https://floudk.github.io/hermes-showcase/docs-status.json>
 - **运行记录**：<https://github.com/floudk/hermes-showcase/actions/workflows/docs-daily.yml>
 
