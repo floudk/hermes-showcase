@@ -418,7 +418,7 @@ def render_docs_readme(sources: dict[str, dict], generated: datetime) -> str:
         '# 开发文档离线包',
         '',
         f'- 打包时间：{local_str(generated)}（北京时间）',
-        f'- 自动更新：GitHub Actions {SCHEDULE_LOCAL} · 站点 {SITE_URL}',
+        f'- 自动更新：GitHub Actions {SCHEDULE_LOCAL}',
         '',
         '## 目录与来源映射',
         '',

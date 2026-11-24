@@ -1,0 +1,17 @@
+name: cron probe
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          echo "schedule event fired at $(date -u)"
+          echo "github.event_name=${{ github.event_name }}"
