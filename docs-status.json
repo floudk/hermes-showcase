@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-11-23T06:32:14Z",
-  "generated_at_local": "2026-11-23 14:32:14",
+  "generated_at": "2026-11-24T09:56:30Z",
+  "generated_at_local": "2026-11-24 17:56:30",
   "schedule_local": "每天 08:17（北京时间）",
   "site_url": "https://floudk.github.io/hermes-showcase/",
   "repo": "floudk/hermes-showcase",
-  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45124729484",
+  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45369882912",
   "sources": {
     "claude": {
       "label": "Claude Code",
       "site": "https://code.claude.com/docs",
-      "pages": 205,
+      "pages": 221,
       "page_failures": 0,
       "page_failure_examples": {},
-      "files": 208,
-      "bytes": 21384023,
+      "files": 224,
+      "bytes": 22120251,
       "urls": {
         "index": "https://code.claude.com/docs/llms.txt",
         "full": "https://code.claude.com/docs/llms-full.txt"
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-23T14:32:07+08:00",
-      "fetched_at_local": "2026-11-23 14:32:07",
+      "fetched_at": "2026-11-24T17:56:16+08:00",
+      "fetched_at_local": "2026-11-24 17:56:16",
       "key": "claude"
     },
     "codex": {
       "label": "OpenAI Codex",
       "site": "https://developers.openai.com/codex",
-      "pages": 200,
+      "pages": 201,
       "page_failures": 0,
       "page_failure_examples": {},
-      "files": 204,
-      "bytes": 9315872,
+      "files": 205,
+      "bytes": 9336713,
       "urls": {
         "index": "https://developers.openai.com/codex/llms.txt",
         "full": "https://developers.openai.com/codex/llms-full.txt",
@@ -39,8 +39,8 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-23T14:32:08+08:00",
-      "fetched_at_local": "2026-11-23 14:32:08",
+      "fetched_at": "2026-11-24T17:56:20+08:00",
+      "fetched_at_local": "2026-11-24 17:56:20",
       "key": "codex"
     },
     "dsh": {
@@ -57,17 +57,17 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-23T14:32:13+08:00",
-      "fetched_at_local": "2026-11-23 14:32:13",
+      "fetched_at": "2026-11-24T17:56:27+08:00",
+      "fetched_at_local": "2026-11-24 17:56:27",
       "key": "dsh"
     }
   },
   "zip": {
-    "name": "codex-docs.zip",
-    "bytes": 13596284,
-    "sha256": "aebbea05a530881385a9e5aad0c2607ea3d442cb7c8d901c316ce7115ea359d0",
-    "entries": 1358,
-    "raw_bytes": 43815066
+    "name": "dev-docs.zip",
+    "bytes": 13817930,
+    "sha256": "4fae5dfdf63e54536bede1ae32a26bfcd6c2a962305714d41fb0c3792ca3a157",
+    "entries": 1373,
+    "raw_bytes": 44572135
   },
   "errors": []
 }
