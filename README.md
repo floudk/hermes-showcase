@@ -34,6 +34,11 @@ dev-docs.zip
 - 生成脚本：[`scripts/build_docs.py`](scripts/build_docs.py)（纯 Python 标准库，无第三方依赖）。
 - 任何一次抓取失败都不会让站点挂掉：会沿用上一次成功版本（`actions/cache`），并在 `docs-status.json` 里标记 `stale`；页面超过 36 小时未更新会显示提示。
 - 定时任务每天会提交一份很小的 `docs-status.json`，避免 GitHub 因「仓库 60 天无活动」停用定时工作流。
+- **兜底触发**：GitHub 的 `schedule` 触发器有概率不按时触发（2026-11-24 实测当天未触发），因此本机另配了 cron 兜底：每天早上 9:17–13:17 每小时检查一次，若北京时间当天还没有成功构建，就用 `workflow_dispatch` 补触发一次（脚本：[`scripts/local_daily_trigger.sh`](scripts/local_daily_trigger.sh)）。
+
+  ```cron
+  17 9-13 * * * /home/yfqing/Projects/workspace/hermes-showcase/scripts/local_daily_trigger.sh >> $HOME/.local/state/hermes-docs-trigger.log 2>&1
+  ```
 - 站点部署方式已切换为 **GitHub Actions Artifact**（Settings → Pages → Source: GitHub Actions），每日构建产物不再提交到 main 分支，仓库体积不会膨胀。
 
 ## 本地手动跑一次
