@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-24T09:56:30Z",
-  "generated_at_local": "2026-11-24 17:56:30",
+  "generated_at": "2026-11-25T08:37:08Z",
+  "generated_at_local": "2026-11-25 16:37:08",
   "schedule_local": "每天 08:17（北京时间）",
   "site_url": "https://floudk.github.io/hermes-showcase/",
   "repo": "floudk/hermes-showcase",
-  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45369882912",
+  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45577805329",
   "sources": {
     "claude": {
       "label": "Claude Code",
@@ -13,15 +13,15 @@
       "page_failures": 0,
       "page_failure_examples": {},
       "files": 224,
-      "bytes": 22120251,
+      "bytes": 22370332,
       "urls": {
         "index": "https://code.claude.com/docs/llms.txt",
         "full": "https://code.claude.com/docs/llms-full.txt"
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-24T17:56:16+08:00",
-      "fetched_at_local": "2026-11-24 17:56:16",
+      "fetched_at": "2026-11-25T16:36:54+08:00",
+      "fetched_at_local": "2026-11-25 16:36:54",
       "key": "claude"
     },
     "codex": {
@@ -31,7 +31,7 @@
       "page_failures": 0,
       "page_failure_examples": {},
       "files": 205,
-      "bytes": 9336713,
+      "bytes": 9333972,
       "urls": {
         "index": "https://developers.openai.com/codex/llms.txt",
         "full": "https://developers.openai.com/codex/llms-full.txt",
@@ -39,8 +39,8 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-24T17:56:20+08:00",
-      "fetched_at_local": "2026-11-24 17:56:20",
+      "fetched_at": "2026-11-25T16:36:57+08:00",
+      "fetched_at_local": "2026-11-25 16:36:57",
       "key": "codex"
     },
     "dsh": {
@@ -57,17 +57,17 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-24T17:56:27+08:00",
-      "fetched_at_local": "2026-11-24 17:56:27",
+      "fetched_at": "2026-11-25T16:37:05+08:00",
+      "fetched_at_local": "2026-11-25 16:37:05",
       "key": "dsh"
     }
   },
   "zip": {
     "name": "dev-docs.zip",
-    "bytes": 13817930,
-    "sha256": "4fae5dfdf63e54536bede1ae32a26bfcd6c2a962305714d41fb0c3792ca3a157",
+    "bytes": 13893162,
+    "sha256": "303141015bdd627b7201d990cf4646d38f28b384c7a792c946e4b1baa35bd606",
     "entries": 1373,
-    "raw_bytes": 44572135
+    "raw_bytes": 44819475
   },
   "errors": []
 }
