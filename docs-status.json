@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-26T08:20:15Z",
-  "generated_at_local": "2026-11-26 16:20:15",
+  "generated_at": "2026-11-27T08:36:17Z",
+  "generated_at_local": "2026-11-27 16:36:17",
   "schedule_local": "每天 08:17（北京时间）",
   "site_url": "https://floudk.github.io/hermes-showcase/",
   "repo": "floudk/hermes-showcase",
-  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45782227461",
+  "run": "https://github.com/floudk/hermes-showcase/actions/runs/45966915305",
   "sources": {
     "claude": {
       "label": "Claude Code",
@@ -20,8 +20,8 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-26T16:20:03+08:00",
-      "fetched_at_local": "2026-11-26 16:20:03",
+      "fetched_at": "2026-11-27T16:36:08+08:00",
+      "fetched_at_local": "2026-11-27 16:36:08",
       "key": "claude"
     },
     "codex": {
@@ -31,7 +31,7 @@
       "page_failures": 0,
       "page_failure_examples": {},
       "files": 205,
-      "bytes": 9448063,
+      "bytes": 9488254,
       "urls": {
         "index": "https://developers.openai.com/codex/llms.txt",
         "full": "https://developers.openai.com/codex/llms-full.txt",
@@ -39,8 +39,8 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-26T16:20:06+08:00",
-      "fetched_at_local": "2026-11-26 16:20:06",
+      "fetched_at": "2026-11-27T16:36:10+08:00",
+      "fetched_at_local": "2026-11-27 16:36:10",
       "key": "codex"
     },
     "dsh": {
@@ -57,17 +57,17 @@
       },
       "stale": false,
       "present": true,
-      "fetched_at": "2026-11-26T16:20:13+08:00",
-      "fetched_at_local": "2026-11-26 16:20:13",
+      "fetched_at": "2026-11-27T16:36:15+08:00",
+      "fetched_at_local": "2026-11-27 16:36:15",
       "key": "dsh"
     }
   },
   "zip": {
     "name": "dev-docs.zip",
-    "bytes": 13918354,
-    "sha256": "91787f2f7ee3f35484c94c5a5f54b886f841ce6f5449a58e24a501b6afa941f5",
+    "bytes": 13928850,
+    "sha256": "f39666a67d98f2a79d2d1730e7bb4f7971e4061e639c945084e5c030330263e0",
     "entries": 1373,
-    "raw_bytes": 44936761
+    "raw_bytes": 44976952
   },
   "errors": []
 }
